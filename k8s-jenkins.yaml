@@ -55,7 +55,7 @@ spec:
       containers:
         - terminationMessagePath: /dev/termination-log
           name: jenkins-jenkins
-          image: '10.6.1.2/daocloud/jenkins:latest'
+          image: 'jenkins/jenkins:latest'
           volumeMounts:
             - mountPath: /var/jenkins_home
               name: hostpath-4d8211ec
@@ -81,25 +81,7 @@ spec:
   selector:
     matchLabels:
       dce.daocloud.io/component: jenkins-jenkins
-status:
-  replicas: 1
-  observedGeneration: 28
-  updatedReplicas: 1
-  availableReplicas: 1
-  readyReplicas: 1
-  conditions:
-    - status: 'True'
-      lastUpdateTime: '2019-04-17T03:24:42+00:00'
-      lastTransitionTime: '2019-04-16T13:09:21+00:00'
-      reason: NewReplicaSetAvailable
-      message: ReplicaSet "jenkins-jenkins-6d69ccd59" has successfully progressed.
-      type: Progressing
-    - status: 'True'
-      lastUpdateTime: '2019-05-20T06:52:42+00:00'
-      lastTransitionTime: '2019-05-20T06:52:42+00:00'
-      reason: MinimumReplicasAvailable
-      message: Deployment has minimum availability.
-      type: Available
+
 
 ---
 kind: Service
